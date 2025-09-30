@@ -18,6 +18,11 @@
         </div>
     </div>
 
+    <div>
+      <h4>test de mon composant connecté a l'api</h4>
+      <CompaniesPage></CompaniesPage>
+    </div>
+
     <Badgesize>
     </Badgesize>
     <Card  >
