@@ -1,14 +1,32 @@
 <template>
     <div>------</div>
-    <div v-if="data" class="dateLoaded">
-        <div v-for="value in data">
+    <div v-if="dataServer" class="dateLoaded">
+        <div v-for="value in dataServer">
             value : {{ value }}<br/>
         </div>
+        ici
+        <table class="p-5 ml-14 border-collapse  border-cyan-400 ">
+            <thead>
+                <tr>
+                    <th class="border border-gray-500 ">Id</th>
+                    <th class="border border-gray-500 ">Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template v-for="(value, index) in dataServer">
+                    <tr>
+                        <td class="border border-gray-300 text-red-500">{{value.com_id}}</td>
+                        <td class="border border-gray-300 text-orange-500">{{value.com_name}}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
     </div>
     <div v-else>
         chargement en cours
     </div>
-    
+    dataServer {{ dataServer }}
+    <BuiTable></BuiTable>
     <button class="bg-cyan-500 hover:bg-green-300 rounded-lg m-3 p-2 px-4" 
     v-on:click="refreshCom">
         refresh
@@ -43,7 +61,7 @@ const {
     method : 'GET'
 })
 
-const { data, refresh } = await useFetch('/api/companies/all')
+//const { data, refresh } = await useFetch('/api/companies/all')
 
 watch(dataServer, (newDataServer) => {
     console.log("new data server")

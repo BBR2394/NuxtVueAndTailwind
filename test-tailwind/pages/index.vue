@@ -21,7 +21,7 @@
     <div>
       <h4>test de mon composant connecté a l'api</h4>
       <button class="bg-sky-500 hover:bg-yellow-300 rounded-lg m-3 p-2 px-4"
-          v-on:click="showModal = true">
+          v-on:click="displayCompanies = true">
         afficher les entreprises (attention faut l'api)
       </button>
       <CompaniesPage v-if="displayCompanies"></CompaniesPage>

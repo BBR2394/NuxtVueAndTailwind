@@ -1,5 +1,5 @@
 <template>
-    <span class="p-3 m-4">
+    <div class="border-4 rounded-lg border-purple-500 ">
         <span v-if="title" :class="titleClass()">
             {{ title }}
         </span>
@@ -7,8 +7,7 @@
             :class="inputClass()"
             type="text"
             v-model="testModel">
-        <div>{{ testModel }}</div>
-    </span>
+    </div>
 </template>
 
 <script setup lang="ts">
