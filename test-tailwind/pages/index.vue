@@ -20,9 +20,21 @@
 
     <div>
       <h4>test de mon composant connecté a l'api</h4>
-      <CompaniesPage></CompaniesPage>
+      <button class="bg-sky-500 hover:bg-yellow-300 rounded-lg m-3 p-2 px-4"
+          v-on:click="showModal = true">
+        afficher les entreprises (attention faut l'api)
+      </button>
+      <CompaniesPage v-if="displayCompanies"></CompaniesPage>
     </div>
 
+    <div >
+      <BuiInput v-model="testInputOne"></BuiInput>
+      <br/>
+      <BuiInput v-model="testInputOne" :title="'bonjour'"></BuiInput>
+      testInputOne {{ testInputOne }}
+      <br/>
+      <BuiInput v-model="testInputOne"></BuiInput>
+    </div>
     <Badgesize>
     </Badgesize>
     <Card  >
@@ -85,6 +97,8 @@ const title = ref('le titre')
 const message = ref("Bonjour et bienvenu")
 const showModal = ref(false)
 
+const displayCompanies = ref(false)
+const testInputOne = ref("")
 </script>
 
 <style>
